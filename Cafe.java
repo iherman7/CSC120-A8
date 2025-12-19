@@ -1,11 +1,8 @@
-public class Cafe extends Building {
+public class Cafe extends Building implements CafeRequirements{
    
     /**
     * Attributes
     */
-    private String name;
-    private String address;
-    private int floors;
     private int nCoffeeOunces;
     private int nSugarPackets;
     private int nCreams;
@@ -13,10 +10,14 @@ public class Cafe extends Building {
     private boolean hasElevator;
   
     /** Default constructor 
+    * @param name string name of cafe
+    * @param address string address of cafe
+    * @param floors int number of floors in cafe
     * @return an instance of Cafe 
     */
-    public Cafe() {
-        super("<Name Unknown>", "<Address Unknown>", 1);
+    public Cafe(String name, String address, int floors) {
+        super(name, address, floors);
+        System.out.println("You have built a cafe: ☕");
     }
 
     /**
@@ -30,9 +31,6 @@ public class Cafe extends Building {
     */
     public Cafe(String name, String address, int floors, int nCups, boolean hasElevator) {
         super(name, address, floors);
-        this.name = name;
-        this.address = address;
-        this.floors = floors;
         this.nCups = nCups;
         this.hasElevator = hasElevator;
         System.out.println("You have built a cafe: ☕");
@@ -51,9 +49,6 @@ public class Cafe extends Building {
     */
     public Cafe(String name, String address, int floors, int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups, boolean hasElevator) {
         super(name, address, floors);
-        this.name = name;
-        this.address = address;
-        this.floors = floors;
         this.nCoffeeOunces = nCoffeeOunces;
         this.nSugarPackets = nSugarPackets;
         this.nCreams = nCreams;

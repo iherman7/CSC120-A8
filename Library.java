@@ -1,21 +1,22 @@
 import java.util.Hashtable;
 
-public class Library extends Building {
+public class Library extends Building implements LibraryRequirements{
   
   /**
   * Attributes
   */
-  private String name;
-  private String address;
-  private int floors;
   private Hashtable<String, Boolean> collection;
   private boolean hasElevator;
   
   /** Default constructor 
+  * @param name string name of library
+  * @param address string address of library
+  * @param floors int number of floors in library
   * @return an instance of Library 
   */
-  public Library() {
-    super("<Name Unknown>", "<Address Unknown>", 1);
+  public Library(String name, String address, int floors) {
+    super(name, address, floors);
+    System.out.println("You have built a library: 📖");
   }
 
   /**
@@ -28,9 +29,6 @@ public class Library extends Building {
   */
   public Library(String name, String address, int floors, boolean hasElevator) {
     super(name, address, floors);
-    this.name = name;
-    this.address = address;
-    this.floors = floors;
     this.collection = new Hashtable<String, Boolean>();
     this.hasElevator = hasElevator;
     System.out.println("You have built a library: 📖");
@@ -101,7 +99,7 @@ public class Library extends Building {
   /**
   * Prints the entire collection
   */
-  void printCollection(){
+  public void printCollection(){
     System.out.println(this.collection.toString());
   }
 

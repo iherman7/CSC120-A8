@@ -61,11 +61,11 @@ public class CampusMap {
         
         CampusMap newMap = new CampusMap(); // new map to demonstrate overloaded methods
 
-        newMap.addBuilding(new House()); // default constructor
+        newMap.addBuilding(new House("Cutter House", "23 Elm St", 3)); // default constructor
         newMap.addBuilding(new House("Cutter House", "23 Elm St", 3, true)); // overloaded partial constructor
-        newMap.addBuilding(new Cafe()); // default constructor
+        newMap.addBuilding(new Cafe("Compass Cafe", "1 Chapin Way", 1)); // default constructor
         newMap.addBuilding(new Cafe("Compass Cafe", "1 Chapin Way", 1, 30, false)); // overloaded partial constructor
-        newMap.addBuilding(new Library()); // default constructor
+        newMap.addBuilding(new Library("Compass Cafe", "1 Chapin Way", 1)); // default constructor
 
         System.out.println(newMap);
 

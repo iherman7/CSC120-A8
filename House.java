@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class House extends Building {
+public class House extends Building implements HouseRequirements{
 
   /**
   * Attributes
@@ -8,16 +8,16 @@ public class House extends Building {
   private ArrayList<Student> residents;
   private boolean hasDiningRoom;
   private boolean hasElevator;
-  private String name;
-  private String address;
-  private int floors;
 
   /**
   * Default constructor for House
+  * @param name string name of house
+  * @param address string address of house
+  * @param floors int number of floors in house
   * @return an instance of House
   */
-  public House() {
-    super("<Name Unknown>", "<Address Unknown>", 1);
+  public House(String name, String address, int floors) {
+    super(name, address, floors);
     System.out.println("You have built a house: 🏠");
   }
 
@@ -31,9 +31,6 @@ public class House extends Building {
   */
   public House(String name, String address, int floors, boolean hasElevator) {
     super(name, address, floors);
-    this.name = name;
-    this.address = address;
-    this.floors = floors;
     this.hasElevator = hasElevator;
     System.out.println("You have built a house: 🏠");
   }
@@ -49,9 +46,6 @@ public class House extends Building {
   */
   public House(String name, String address, int floors, boolean hasDiningRoom, boolean hasElevator) {
     super(name, address, floors);
-    this.name = name;
-    this.address = address;
-    this.floors = floors;
     this.residents = new ArrayList<>();
     this.hasDiningRoom = hasDiningRoom;
     this.hasElevator = hasElevator;
@@ -118,7 +112,7 @@ public class House extends Building {
   * Print a list of methods for this building
   */
   public void showOptions(){
-    System.out.println("Available options at " + this.name + ":\n + moveIn() \n + moveOut() \n + isResident()");
+    System.out.println("Available options at " + this.name + ":\n hasDiningRoom \n + moveIn() \n + moveOut() \n + isResident()");
   }
 
   /**
